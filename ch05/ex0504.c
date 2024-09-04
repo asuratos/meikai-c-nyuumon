@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define NUMBER 3
+#define MAX 3
 
 int main(void)
 {
