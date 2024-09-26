@@ -1,44 +1,23 @@
 #include <stdio.h>
 
-char *ncpy(char s1[], const char s2[], int n)
+int len(char s[])
 {
-    for (int i = 0; i < n; i++)
-        s1[i] = s2[i];
-
-    return s1;
-}
-
-char *cpy(char s1[], const char s2[])
-{
-    int i = 0;
-    do
-    {
-        s1[i] = s2[i];
-    } while (s2[i++]);
-    return s1;
+    int len = 0;
+    while (s[len++])
+        ;
+    return len - 1;
 }
 
 int main(void)
 {
 
-    char str1[10], str2[10];
+    char str[10];
     int n;
 
     printf("Input a string: ");
-    scanf("%s", str1);
-    printf("Input another string: ");
-    scanf("%s", str2);
+    scanf("%s", str);
 
-    printf("The second string copied to the first gives: %s\n", cpy(str1, str2));
-
-    printf("Input a string: ");
-    scanf("%s", str1);
-    printf("Input another string: ");
-    scanf("%s", str2);
-    printf("Input a number from 1 ~ 10: ");
-    scanf("%d", &n);
-
-    printf("Copying only the first n gives: %s", ncpy(str1, str2, n));
+    printf("The length of the string is: %d\n", len(str));
 
     return 0;
 }
